@@ -11,7 +11,7 @@
 * [Setup](#setup)
 * [Status](#status)
 * [Contributing to the project](#contributing-to-the-project)
-* [PJT-56 Contributors](#pjt-team-56-contributors)
+* [PJT-56 Contributors](#pjt-56-contributors)
 * [Contact](#contact)
 #
 >## Project Overview
@@ -106,8 +106,8 @@ The next step  involved editing the read.me file and adding it to git to track c
 
 ```bash
 $ git commit -m "updated readme.md"
-[developer e5ab0f7] updated readme.md
- 1 files changed, 179 insertions(+), 2 deletions(-)
+[main a4c9702] updated readme.md
+ 1 file changed, 197 insertions(+), 2 deletions(-)
  rewrite README.md (100%)
 ```
 
@@ -146,15 +146,15 @@ Please note:
 
 - `It shoulb be inviting and clear.`
 
-- `Any additions should be .`
+- `Any additions should be relevant.`
 
 - `It should be easy to contribute to.`
 
-Urls marked **\*** is temporarily unavailable. Please don't delete it without confirming that it has permanently expired.
+Urls marked **\*** are temporarily unavailable. Please don't delete it without confirming that it has permanently expired.
 
 Before adding a pull request, please remember:
 
-```diff
+```bash
 This repository is not meant to contain everything but only good quality verified information.
 ```
 
@@ -163,7 +163,7 @@ All **`suggestions`** are welcome!
 #
 > ## PJT-56 Contributors
 
-This project exists thanks to all the people who contribute.
+This project exists thanks to all the people who contributed to making this a success.
 
 ![PJT-56](https://drive.google.com/uc?export=view&id=1bVknrpW2bMCo4K_AX6tAHK5mTF0US1lT)
 #
