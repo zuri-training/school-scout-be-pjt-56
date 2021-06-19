@@ -7,6 +7,7 @@
 * [Project Features](#project-features)
 * [Technologies](#technologies)
 * [Backend Team To-do list](#backend-team-to-do-list)
+* [Backend Repo Setup](#backend-repo-setup)
 * [Setup](#setup)
 * [Status](#status)
 * [Contributing to the project](#contributing-to-the-project)
@@ -89,7 +90,7 @@ The stacks used for the project backend include:
 - Integrate a live chat feature. 
 
 #
-> ## Setup
+> ## Initial Backend Repo Setup
 
 The Zuriteam Team 56 backend repository was forked and cloned to create a copy on my local machine. 
 
@@ -103,20 +104,31 @@ I changed directory to the cloned repo and set the original Zuriteam Team 56 bac
 ```
 The next step was to create a new branch called developer `git branch developer`, and change my environment to the developer branch using `git checkout developer`.
 
-The read.me file was edited and a new file named "new.txt" was created on the developer branch so that we could track and push the first commit to the repo.
+The read.me file was edited and added to git to track changes. I created the first commit `git commit -m "updated readme.md"`.
 
 ```bash
 $ git commit -m "updated readme.md"
 [developer e5ab0f7] updated readme.md
- 2 files changed, 179 insertions(+), 2 deletions(-)
+ 1 files changed, 179 insertions(+), 2 deletions(-)
  rewrite README.md (100%)
- create mode 100644 new.txt
 ```
 
-Using `git push --set-upstream origin developer`, the commit was pushed to the remote origin repo using
+Using `git push origin developer`, the commit was pushed to the remote origin repository. Finally a pull request was initialized  to push my edits to the upstream repo 
 
-To be updated....
+#
+> ## Setup
 
+Python 3.9 was downloaded and installed. After the installation of the Python program, the project environment was setup with virtualenv and pip. 
+
+To do this, we navigated to the local school-scout-be-pjt-56 project folder and created the 'schoolscout' project folder.
+
+```bash
+# pip install virtualenv
+```
+This created a virtual environment, which we activated and installed dependencies for the project.
+
+
+To be updated...............
 #
 > ## Status
 This project is in progress. 
