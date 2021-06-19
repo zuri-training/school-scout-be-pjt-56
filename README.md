@@ -106,14 +106,16 @@ The next step was to create a new branch called developer `git branch developer`
 The read.me file was edited and a new file named "new.txt" was created on the developer branch so that we could track and push the first commit to the repo.
 
 ```bash
-$ git commit -m "updated readme.html"
-[developer c263e4c] updated readme.html
- 2 files changed, 163 insertions(+), 2 deletions(-)
+$ git commit -m "updated readme.md"
+[developer e5ab0f7] updated readme.md
+ 2 files changed, 179 insertions(+), 2 deletions(-)
  rewrite README.md (100%)
- create mode 100644 index.html
+ create mode 100644 new.txt
 ```
 
-To be updated......
+Using `git push --set-upstream origin developer`, the commit was pushed to the remote origin repo using
+
+To be updated....
 
 #
 > ## Status
