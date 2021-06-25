@@ -39,11 +39,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'core'
+    'core',
+    'auth'
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'shared.serializers.UserRegistrationSerializer',
+    'REGISTER_SERIALIZER': 'auth.serializers.UserRegistrationSerializer',
 }
 
 

@@ -20,30 +20,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-GET_OPTIONS = {'get': 'list'}
-
-RETRIEVE_OPTIONS = {'get': 'retrieve'}
-
-POST_OPTIONS = {'post': 'create'}
-
-LIST_OPTIONS = {
-    'get': 'list',
-    'post': 'create'
-}
-
-DETAIL_OPTIONS = {
-    'get': 'retrieve',
-    'put': 'update',
-    'patch': 'partial_update',
-    'delete': 'destroy'
-}
-
 urlpatterns = [
     path('', lambda request: redirect('admin/', permanent=False)),
     path('admin/', admin.site.urls),
-    path('auth/', include('rest_auth.urls')),
-    path('auth/registration/', include('rest_auth.registration.urls')),
-    path('auth/users/', UserViewSet.as_view(GET_OPTIONS), name="users"),
+    path('auth/', include('auth.urls')),
+    path('core/', include('core.urls'))
 ]
 
 if settings.DEBUG:
