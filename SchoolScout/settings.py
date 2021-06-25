@@ -147,7 +147,7 @@ if DEBUG:
 
 
 # Used in production
-if DEBUG is False:
+if not DEBUG:
     # gmail_email_backend_setup
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_HOST = 'smtp.gmail.com'
