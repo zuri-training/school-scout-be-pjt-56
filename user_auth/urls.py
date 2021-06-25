@@ -1,8 +1,4 @@
-from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect
-from django.conf import settings
-from django.conf.urls.static import static
 from .views import UserViewSet
 
 
@@ -26,6 +22,6 @@ DETAIL_OPTIONS = {
 
 urlpatterns = [
     path('', include('rest_auth.urls')),
-    path('/registration/', include('rest_auth.registration.urls')),
-    path('/users/', UserViewSet.as_view(GET_OPTIONS), name="users"),
+    path('registration/', include('rest_auth.registration.urls')),
+    path('users/', UserViewSet.as_view(GET_OPTIONS), name="users"),
 ]
