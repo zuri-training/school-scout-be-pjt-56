@@ -1,10 +1,11 @@
 # Welcome to School Scout Backend APIs Documentation
 
 ## User Registration and Authentication Endpoints
+...
 
 **I. END POINT:** /auth/registration/
 
-> This endpoint is responsible for registering new users.
+This endpoint is responsible for registering new users.
 >
 > **Media Type:** *"application/json"*
 >
@@ -12,23 +13,28 @@
 >
 > **Content (Request):**
 >
-> * username \<string, unique, required>
-> * email \<string, unique, required>
-> * password1 \<string, required>
-> * password2 \<string, required>
-> * first_name \<string, required>
-> * last_name \<string, required> 
+> * username
+> * email
+> * password1
+> * password2
+> * first_name
+> * last_name
 > 
-> Note: The password must be atleast 8 characters and not more than 150 characters, can not be entirely numeric and can only contain letters, digits and @/./+/-/_ 
+> Note: 
+> 1. The password must be atleast 8 characters and not more than 150 characters
+> 1. It can not be entirely numeric 
+> 1. It can only contain letters, digits and @/./+/-/_ 
 > 
 > **Return Type:** *"application/json"*
 >
 > **Content (Response):**
-> * key \<string>
+> * key
+
+...
 
 **II. END POINT:** /auth/login/
 
-> This endpoint is responsible for authenticating a user.
+This endpoint is responsible for authenticating a user.
 >
 > **Media Type:** *"application/json"*
 >
@@ -36,11 +42,11 @@
 >
 > **Content (Request):**
 >
-> * username \<string, optional>
-> * email \<string, required>
-> * password \<string, required>
+> * username \<optional>
+> * email
+> * password
 > 
 > **Return Type:** *"application/json"*
 >
 > **Content (Response):**
-> * key \<string>
+> * key
