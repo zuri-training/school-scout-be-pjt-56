@@ -18,7 +18,8 @@
 > * password2 \<string, required>
 > * first_name \<string, required>
 > * last_name \<string, required> 
-> * **Note:** The password must be atleast 8 characters and not more than 150 characters, can not be entirely numeric and can only contain letters, digits and @/./+/-/_ 
+> 
+> Note: The password must be atleast 8 characters and not more than 150 characters, can not be entirely numeric and can only contain letters, digits and @/./+/-/_ 
 > 
 > **Return Type:** *"application/json"*
 >
