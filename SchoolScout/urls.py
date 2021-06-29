@@ -28,7 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', include('core.urls')),
     path('articles/', include('core.articles.urls')),
-    #path('scholarships/', include('core.scholarships.urls')),
+    path('scholarships/', include('core.scholarships.urls')),
     path('comments/', include('core.comments.urls')),
 
 
