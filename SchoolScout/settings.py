@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'drf_spectacular',
 
-    'core'
+    'core',
+    #'core.articles'
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {
