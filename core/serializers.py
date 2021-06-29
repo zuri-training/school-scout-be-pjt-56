@@ -10,7 +10,6 @@ class ArticleSerializer(serializers.ModelSerializer):
             'pk',
             'author',
             'title',
-            'slug',
             'body',
             'date',
         ]
