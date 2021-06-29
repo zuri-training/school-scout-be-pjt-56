@@ -29,7 +29,7 @@ urlpatterns = [
     path('core/', include('core.urls')),
     path('articles/', include('core.articles.urls')),
     #path('scholarships/', include('core.scholarships.urls')),
-    #path('comments/', include('core.comments.urls')),
+    path('comments/', include('core.comments.urls')),
 
 
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
