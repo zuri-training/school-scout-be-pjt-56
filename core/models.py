@@ -22,3 +22,15 @@ class Article(models.Model): # Create new post model
         return "{}".format(self.title)
 
 
+class Comment(models.Model): # Create new course model
+
+    article = models.ForeignKey(Article, related_name="comment", on_delete=models.CASCADE)
+    commenter = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-date']
+
+    def __str__(self):
+        return '%s - %s' % (self.article, self.commenter)
