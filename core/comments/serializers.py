@@ -14,5 +14,6 @@ class CommentSerializer(serializers.ModelSerializer):
             'commenter',
             'body',
             'date',
+            #'slug"
         ]
 
