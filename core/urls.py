@@ -1,11 +1,12 @@
 from django.urls import path
-from courses import views as coursesapi
+from school import views as schoolapi
 
- # Course Related URLS
 urlpatterns = [
-    path('create-course/', coursesapi.CreateCourseViews.as_view(), name='create-course'),
-    path('get-course-list/', coursesapi.GetCourseListViews.as_view(), name='get-course-list'),
-    path('update-course/<int:pk>/', coursesapi.UpdateCourseViews.as_view(), name='update-course'),
-    path('delete-course/<int:pk>/', coursesapi.DeleteCourseViews.as_view(), name='delete-course'),
-    path('view-course/<int:pk>/', coursesapi.ViewCourseViews.as_view(), name='view-course'),
+
+     #School Related URLS
+    path('create-school/', schoolapi.CreateSchoolViews.as_view(), name='create-school'),
+    path('get-school-list/', schoolapi.GetSchoolListViews.as_view(), name='get-school-list'),
+    path('update-school/<int:pk>/', schoolapi.UpdateSchoolViews.as_view(), name='update-school'),
+    path('delete-school/<int:pk>/', schoolapi.DeleteSchoolViews.as_view(), name='delete-school'),
+    path('view-school/<int:pk>/', schoolapi.ViewSchoolViews.as_view(), name='view-school'),
  ]
