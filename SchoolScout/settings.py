@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 
-    'core'
+    'core',
+    'courses',
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {
