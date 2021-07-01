@@ -10,7 +10,11 @@
 * [Backend Repo Setup](#backend-repo-setup)
 * [Setting up the project](#setup)
 * [Setting up the PostgreSql Database](#setting-up-the-postgresql-database)
+<<<<<<< HEAD
 * [Backend Deliverables](#backend-deliverables)
+=======
+
+>>>>>>> 9d559b24e9c174f7c3a28ff2ea2e5274558906fb
 * [Status](#status)
 * [Contributing to the project](#contributing-to-the-project)
 * [PJT-56 Contributors](#pjt-56-contributors)
@@ -150,7 +154,11 @@ After the installation of the Python program, setup the project environment with
 </p>
 
 *Note: 
+<<<<<<< HEAD
 - This project was setup using the gitbash terminal. Some of the commands used do not work with command prompt or powershell.
+=======
+- This project was setup using the gitbash terminal.Some of the commands used do not work with command prompt or powershell.
+>>>>>>> 9d559b24e9c174f7c3a28ff2ea2e5274558906fb
 - If a "pip command not found error" is encountered, download get-pip.py and run `phython get-pip.py` to install it. 
 
 ```bash
@@ -196,7 +204,11 @@ Install all the necessary dependencies for the project. A few of them are listed
 
 An exhaustive list can be found in the requirements.txt file included in this project. The modules can be 'batch installed' using the  `pip install -r requirements.txt` command.
 
+<<<<<<< HEAD
 Note: The settings.py file in your project folder
+=======
+
+>>>>>>> 9d559b24e9c174f7c3a28ff2ea2e5274558906fb
 
 To be updated...............
 
@@ -230,10 +242,17 @@ DATABASES['default'].update(db_from_env)
 To be updated...............
 #
 
+<<<<<<< HEAD
 > ## Backend Deliverables
 
 
 **1:  Registration Endpoint:** /auth/registration/
+=======
+> ## Project Deliverables - Endpoints
+
+
+**1:  Registration End point:** /auth/registration/
+>>>>>>> 9d559b24e9c174f7c3a28ff2ea2e5274558906fb
 
 This endpoint is responsible for registering new users.
 ```bash
@@ -259,7 +278,11 @@ Content (Response):
 key \<string>
 ```
 
+<<<<<<< HEAD
 **2:  Signup Endpoint** /auth/login/
+=======
+**2:  Signup End point** /auth/login/
+>>>>>>> 9d559b24e9c174f7c3a28ff2ea2e5274558906fb
 
 This endpoint is responsible for authenticating a user.
 
