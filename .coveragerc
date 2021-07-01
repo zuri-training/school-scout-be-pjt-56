@@ -1,0 +1,48 @@
+# .coveragerc to control coverage.py
+[run]
+branch = True
+
+omit = 
+    */node_modules/*
+    */migrations/*
+    */venv/*
+    tests
+    apps.py
+    __init__.py
+    asgi
+    wsgi
+    admin.py
+    manage.py
+
+
+plugins = django_coverage_plugin
+
+[django_coverage_plugin]
+template_extensions = html, txt, tex, email
+
+[report]
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    # Have to re-enable the standard pragma
+    pragma: no cover
+
+    # Don't complain about missing debug-only code:
+    def __repr__
+    if self\.debug
+
+    # Don't complain if tests don't hit defensive assertion code:
+    raise AssertionError
+    raise NotImplementedError
+
+    # Don't complain if non-runnable code isn't run:
+    if 0:
+    if __name__ == .__main__.:
+
+fail_under = 100
+show_missing = True
+skip_covered = True
+
+ignore_errors = True
+
+[html]
+directory = coverage_html_report
