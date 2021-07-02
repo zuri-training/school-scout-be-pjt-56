@@ -14,6 +14,17 @@ class Testimonial(models.Model):
         return self.testimonial 
 
 
+<<<<<<< HEAD
+=======
+class School(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True, blank=True)
+    school_name = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.school_name
+
+
+>>>>>>> 2547439d3eca0953d5f8aa5ba62e28f62834ea8c
 class UniversityReview(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     university = models.ForeignKey(School, on_delete=models.CASCADE)
