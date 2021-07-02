@@ -21,8 +21,7 @@
 SchoolScout is a web-based application that enables individuals to gather and compare information about various institutions in Nigeria, in order to make informed decisions.
 </p> 
 
-![site image](https://drive.google.com/uc?export=view&id=16Otrf-DKRwjCBjYJhP587dFUIP3vF1Bu)
-
+![site image](https://drive.google.com/uc?export=view&id=1vIxJbb01AfxhZcPSp-LHF8oU1zh6v9OX)
 
 <p align="justify">
 The platform would have a list of schools where users can view information about each school such as the history, programs offered, location, fees, and available scholarship opportunities.
@@ -233,9 +232,7 @@ To be updated...............
 > ## Backend Deliverables
 
 
-**1:  Registration Endpoint:** /auth/registration/
-
-This endpoint is responsible for registering new users.
+-  Registration Endpoint:** /auth/registration/ - User registration
 ```bash
 
 Media Type: "application/json"
@@ -258,10 +255,7 @@ Return Type: "application/json"
 Content (Response):
 key \<string>
 ```
-
-**2:  Signup Endpoint** /auth/login/
-
-This endpoint is responsible for authenticating a user.
+-  Signup Endpoint** /auth/login/ - User authentication.
 
 ```bash
 Media Type: "application/json"
@@ -278,6 +272,16 @@ Return Type: "application/json"
 
 Content (Response): "key\<string>"
 ```
+-  Articles Endpoint** /core/articles/ - CRUD functionality on the articles pages.
+
+-  Scholarship Endpoint** /core/scholarships/ - CRUD functionality on the scholarships pages.
+
+-  School Endpoint** /core/school/ - CRUD functionality on the school pages.
+
+-  Comments Endpoint** /core/comments/ - CRUD functionality on the comments pages.
+
+-  Courses Endpoint** /core/courses/ - CRUD functionality on the Courses pages.
+
 #
 
 > ## Status
