@@ -11,6 +11,8 @@ This endpoint is responsible for registering new users.
 >
 > **Allowed Methods:** "POST"
 >
+> **Required Headers:** *None*
+>
 > **Content (Request):**
 >
 > * username
@@ -40,6 +42,8 @@ This endpoint is responsible for authenticating a user.
 >
 > **Allowed Methods:** "POST"
 >
+> **Required Headers:** *None*
+>
 > **Content (Request):**
 >
 > * username \<optional>
@@ -50,3 +54,75 @@ This endpoint is responsible for authenticating a user.
 >
 > **Content (Response):**
 > * key
+
+...
+
+**III. END POINT:** /auth/user/
+
+This endpoint is responsible for retrieving and updating user details.
+>
+> **Media Type:** *"application/json"*
+>
+> **Allowed Methods:** "GET", "PUT", "PATCH"
+>
+> **Required Headers:** *Authentication*
+>
+> **Content (Request):**
+>
+> * username \<optional>
+> * first_name \<optional>
+> * last_name \<optional>
+> 
+> **Return Type:** *"application/json"*
+>
+> **Content (Response):**
+> * pk
+> * username
+> * email
+> * first_name
+> * last_name
+
+...
+
+**IV. END POINT:** /auth/password/change/
+
+This endpoint is responsible for updating/changing a user's password.
+>
+> **Media Type:** *"application/json"*
+>
+> **Allowed Methods:** "POST"
+>
+> **Required Headers:** *Authentication*
+>
+> **Content (Request):**
+>
+> * new_password1
+> * new_password2
+> 
+> **Return Type:** *"application/json"*
+>
+> **Content (Response):**
+>
+> * success/error message
+
+...
+
+**V. END POINT:** /auth/password/reset/
+
+This endpoint is responsible for resetting a user's password. It receives a user's email and sends a password reset link to the email
+>
+> **Media Type:** *"application/json"*
+>
+> **Allowed Methods:** "POST"
+>
+> **Required Headers:** *None*
+>
+> **Content (Request):**
+>
+> * email
+> 
+> **Return Type:** *"application/json"*
+>
+> **Content (Response):**
+>
+> * success/error message
