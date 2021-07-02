@@ -195,9 +195,6 @@ Install all the necessary dependencies for the project. A few of them are listed
 
 An exhaustive list can be found in the requirements.txt file included in this project. The modules can be 'batch installed' using the  `pip install -r requirements.txt` command.
 
-Note: The settings.py file in your project folder
-
-To be updated...............
 
 #
 > ## Setting up the PostgreSQL Database
@@ -210,9 +207,14 @@ Django's default database is Sqlite3 and it was used in the local development st
 The process of setting up PostgreSQL can be done in a couple of ways. One way requires the download and installation of  PostgreSQL interactive installer for Windows. This installer installs the PostgreSQL database server, a terminal program called psql and pgAdmin, which is configured and its values such as the username, password, port are inserted into the django settings.py file.
 </p>
 
-The method used for this project however involved the installation of the dj-database-url module. Use `pip install dj-database-url` module and edit your settings.py located in the schoolscout folder.
+The method used for this project however involved the download and installation of the **dj-database-url module** using the command *`pip install dj-database-url`* and the configuration of the settings.py file located in the SchoolScout folder.
 
-Import the module using `import dj_database_url` at the top of the document and configure your database as shown below.
+
+<p align="justify">
+This module provides a Django database connection dictionary, populated with all the data specified in your URLs. This is especially useful for deployment on sites like Heroku
+</p>
+
+To setup, simply import the module using `import dj_database_url` at the top of the document and configure your database as shown below.
 
 ```bash
 DATABASES = {
@@ -226,13 +228,17 @@ db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 ```
 
-To be updated...............
 #
 
 > ## Backend Deliverables
 
+The backend team on this project were responsible for providing the endpoints of the SchoolScout web API. 
 
--  Registration Endpoint:** /auth/registration/ - User registration
+An API or Application Programming Interface Endpoint is the specific location where requests for information are sent. Simply put, it refrences the URL which is used to communicate with the server.
+
+The endpoints for the SchoolScout API include:
+
+-  `Registration` */auth/registration/* - User registration
 ```bash
 
 Media Type: "application/json"
@@ -255,7 +261,7 @@ Return Type: "application/json"
 Content (Response):
 key \<string>
 ```
--  Signup Endpoint** /auth/login/ - User authentication.
+-  `Sign in`  */auth/login/* - User authentication.
 
 ```bash
 Media Type: "application/json"
@@ -272,16 +278,17 @@ Return Type: "application/json"
 
 Content (Response): "key\<string>"
 ```
--  Articles Endpoint** /core/articles/ - CRUD functionality on the articles pages.
 
--  Scholarship Endpoint** /core/scholarships/ - CRUD functionality on the scholarships pages.
+| <b><u>Endpoints</u></b> | <b><u>Requests </u></b> |
+| :---         | :---         |
+| *`Articles` /core/articles/* | CRUD functionality on the articles pages |
+| *`Scholarship` /core/scholarships/* | CRUD functionality on the scholarships pages |
+| *`School` /core/school/* | CRUD functionality on the school pages |
+| *`Comments` /core/comments/* | CRUD functionality on the comments pages |
+| *`Courses`/core/courses/* | CRUD functionality on the Courses pages |
 
--  School Endpoint** /core/school/ - CRUD functionality on the school pages.
 
--  Comments Endpoint** /core/comments/ - CRUD functionality on the comments pages.
-
--  Courses Endpoint** /core/courses/ - CRUD functionality on the Courses pages.
-
+- Note: **CRUD - Create / Retrieve / Update /Destroy**
 #
 
 > ## Status
