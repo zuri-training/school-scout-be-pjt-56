@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'drf_spectacular',
 
     'core',
-    #'core.articles'
+    
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {
