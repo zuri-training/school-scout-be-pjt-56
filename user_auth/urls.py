@@ -1,7 +1,5 @@
-
-from django.conf import settings
-from django.contrib import admin
 from django.urls import path, include
+from .views import UserViewSet
 
 
 GET_OPTIONS = {'get': 'list'}
@@ -22,4 +20,9 @@ DETAIL_OPTIONS = {
     'delete': 'destroy'
 }
 
-urlpatterns = []
+urlpatterns = [
+    path('', include('rest_auth.urls')),
+    path('registration/', include('rest_auth.registration.urls')),
+    path('users/', UserViewSet.as_view(GET_OPTIONS), name="users"),
+    path('accounts/', include('allauth.urls')),
+]
