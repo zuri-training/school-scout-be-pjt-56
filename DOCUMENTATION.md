@@ -107,7 +107,7 @@ This endpoint is responsible for updating/changing a user's password.
 
 ...
 
-**V. END POINT:** /auth/password/reset/
+**V. END POINT:** /auth/accounts/password/reset/
 
 This endpoint is responsible for resetting a user's password. It receives a user's email and sends a password reset link to the email
 >
