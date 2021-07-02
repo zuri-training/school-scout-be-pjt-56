@@ -21,7 +21,6 @@ class ArticleDetailAPIView(RetrieveAPIView):
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
 
-
 class ArticleCreateAPIView(CreateAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
