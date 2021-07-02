@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SCHOOL_SCOUT_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -45,13 +45,11 @@ INSTALLED_APPS = [
     
     'phonenumber_field',
     'drf_spectacular',
-
-    'core',
-    
+    'user_auth'
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'shared.serializers.UserRegistrationSerializer',
+    'REGISTER_SERIALIZER': 'user_auth.serializers.UserRegistrationSerializer',
 }
 
 MIDDLEWARE = [
@@ -160,6 +158,7 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
  )
 
+
 # CORS_ORIGIN_WHITELIST = [
 #     "http://localhost:4200"
 # ]
@@ -173,15 +172,22 @@ if DEBUG:
 
 
 # Used in production
-# if DEBUG is False:
-#     # gmail_email_backend_setup
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#     EMAIL_HOST = 'smtp.gmail.com'
-#     EMAIL_HOST_USER = 'schoolscout@gmail.com'
-#     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_BACKEND_KEY')
-#     EMAIL_PORT = 587
-#     EMAIL_USE_TLS = True
-#     DEFAULT_FROM_EMAIL = 'schoolscout@gmail.com'
+if not DEBUG:
+    # gmail_email_backend_setup
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'schoolscout56@gmail.com'
+    EMAIL_HOST_PASSWORD = os.environ.get('SCHOOL_SCOUT_EMAIL_KEY')
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'schoolscout56@gmail.com'
+
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_EMAIL_REQUIRED = True   
+
+ACCOUNT_USERNAME_REQUIRED = False
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
@@ -215,6 +221,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+# To be adjusted once the frontend url is up and running
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
