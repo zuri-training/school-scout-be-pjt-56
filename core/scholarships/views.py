@@ -1,39 +1,39 @@
-from rest_framework.generics import (
-    ListAPIView, 
-    RetrieveAPIView, 
-    CreateAPIView, 
-    UpdateAPIView, 
-    DestroyAPIView
-)
+from django.shortcuts import render
+from django.http import Http404
+from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser 
+
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.response import Response
+from rest_framework import status
 
 from .serializers import ScholarshipSerializer
 from core.models import Scholarship
 
 
-class ScholarshipListAPIView(ListAPIView):
+class ScholarshipList(ListCreateAPIView):
+    
     queryset = Scholarship.objects.all()
     serializer_class = ScholarshipSerializer
 
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
 
-class ScholarshipDetailAPIView(RetrieveAPIView):
+
+class ScholarshipDetail(RetrieveUpdateDestroyAPIView):
+
     queryset = Scholarship.objects.all()
     serializer_class = ScholarshipSerializer
     lookup_field = 'slug'
     lookup_url_kwarg = 'slug'
 
-
-class ScholarshipCreateAPIView(CreateAPIView):
-    queryset = Scholarship.objects.all()
-    serializer_class = ScholarshipSerializer
-
-
-class ScholarshipUpdateAPIView(UpdateAPIView):
-    queryset = Scholarship.objects.all()
-    serializer_class = ScholarshipSerializer
-    lookup_url_kwarg = 'slug'
-
-
-class ScholarshipDestroyAPIView(DestroyAPIView):
-    queryset = Scholarship.objects.all()
-    serializer_class = ScholarshipSerializer
-    lookup_url_kwarg = 'slug'
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAdminUser]
+        return [permission() for permission in permission_classes]
+    

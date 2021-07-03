@@ -1,42 +1,39 @@
-from rest_framework.generics import (
-    ListAPIView, 
-    RetrieveAPIView, 
-    CreateAPIView, 
-    UpdateAPIView, 
-    DestroyAPIView
-)
+from django.shortcuts import render
+from django.http import Http404
+
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.response import Response
+from rest_framework import status
 
 from .serializers import CommentSerializer
 from core.models import Comment
 
-# Create your views here.
 
-
-class CommentListAPIView(ListAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-
-
-class CommentDetailAPIView(RetrieveAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-    lookup_field = 'pk'
+class CommentList(ListCreateAPIView):
     
-
-class CommentCreateAPIView(CreateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAuthenticated]
+        return [permission() for permission in permission_classes]
 
-class CommentUpdateAPIView(UpdateAPIView):
+
+class CommentDetail(RetrieveUpdateDestroyAPIView):
+
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
     lookup_field = 'pk'
     lookup_url_kwarg = 'pk'
 
-
-class CommentDestroyAPIView(DestroyAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentSerializer
-    lookup_field = 'pk'
-    lookup_url_kwarg = 'pk'
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            permission_classes = [AllowAny]
+        else:
+            permission_classes = [IsAuthenticated]
+        return [permission() for permission in permission_classes]
+    

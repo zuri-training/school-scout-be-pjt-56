@@ -17,14 +17,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SCHOOL_SCOUT_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic', #to use WhiteNoise in development for staticfiles (solved the 500 server error)
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     
     'phonenumber_field',
+    'phonenumbers',
     'drf_spectacular',
+    'core',
     'user_auth'
 ]
 
@@ -53,14 +56,17 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 }
 
 MIDDLEWARE = [
+
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  
 ]
 
 ROOT_URLCONF = 'SchoolScout.urls'
@@ -124,9 +130,8 @@ REST_FRAMEWORK = {
     ],
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-        #added
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+        'rest_framework.permissions.AllowAny',
+        
     ],
 
     'DEFAULT_PARSER_CLASSES': (
@@ -217,6 +222,8 @@ USE_THOUSAND_SEPARATOR = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

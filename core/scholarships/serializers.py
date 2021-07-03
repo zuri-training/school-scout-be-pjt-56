@@ -10,9 +10,10 @@ class ScholarshipSerializer(serializers.ModelSerializer):
         fields = [
             'pk',
             'name',
-            'donor',
-            'description',
             'slug',
+            'donor',
+            'image',
+            'description',
             'institution',
             'course_name',
             'funding',

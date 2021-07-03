@@ -1,19 +1,13 @@
 from django.urls import path
-
-from .views import (
-    CommentListAPIView, 
-    CommentDetailAPIView, 
-    CommentCreateAPIView, 
-    CommentUpdateAPIView, 
-    CommentDestroyAPIView
-    )
+from rest_framework.urlpatterns import format_suffix_patterns
+from core.comments import views
 
 app_name = 'comments'
 
 urlpatterns = [
-    path('', CommentListAPIView.as_view(), name='comment_list'),
-    path('<pk>', CommentDetailAPIView.as_view(), name='comment_detail'),
-    path('new/', CommentCreateAPIView.as_view(), name='create'),
-    path('<pk>/edit/', CommentUpdateAPIView.as_view(), name='update'),
-    path('<pk>/delete/', CommentDestroyAPIView.as_view(), name='delete'),
+    path('', views.CommentList.as_view(), name='comment_list'),
+    path('<pk>', views.CommentDetail.as_view(), name='comment_detail'),
+
 ]
+
+urlpatterns = format_suffix_patterns(urlpatterns)

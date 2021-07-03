@@ -12,6 +12,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             'author',
             'title',
             'slug',
+            'image',
             'body',
             'date',
         ]
