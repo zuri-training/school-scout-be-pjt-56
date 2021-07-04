@@ -1,8 +1,9 @@
+from django.contrib import auth
 from django.shortcuts import render
-from .models import Testimonial, UniversityReview, School
+from .models import Testimonial, Review, School
 from rest_framework import permissions
 from rest_framework.generics import ListCreateAPIView, ListAPIView, CreateAPIView
-from .serializers import TestimonialSerializer, UniversityReviewSerializer
+from .serializers import TestimonialSerializer, ReviewSerializer
 
 # Create your views here.
 
@@ -12,18 +13,16 @@ class TestimonialListAPIView(ListAPIView):
     permission_classes = [permissions.AllowAny]
 
 
-class UniversityReviewAPIListView(ListCreateAPIView):
-    serializer_class = UniversityReviewSerializer
+class ReviewAPIListView(ListCreateAPIView):
+    serializer_class = ReviewSerializer
     permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self, **kwargs):
-        pk = kwargs.get('pk')
-        queryset = UniversityReview.objects.filter()
+    def get_queryset(self):
+        queryset = Review.objects.filter(school_id=self.kwargs.get('pk'))
         return queryset
 
-    def perform_create(self, serializer, **kwargs):
+    def perform_create(self, serializer):
         author = self.request.user
-        pk = self.kwargs.get('pk')
-        print(pk)
-        university = School.objects.get(pk=pk)
-        serializer.save(author=author, university=university)
+        school_id = self.kwargs.get('pk')
+        school = School.objects.get(pk=school_id)
+        serializer.save(author=author, school=school)
