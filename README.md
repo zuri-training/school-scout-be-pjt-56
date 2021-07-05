@@ -1,9 +1,12 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # backend-practice
 =======
 =======
 >>>>>>> 2547439d3eca0953d5f8aa5ba62e28f62834ea8c
+=======
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511
 > # SchoolScout
 
 > ## Table of contents
@@ -237,6 +240,9 @@ Hezekiah Samuel
 > Readme created by Pauline Banye
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 2547439... Testimonial and reviews
 =======
 >>>>>>> 2547439d3eca0953d5f8aa5ba62e28f62834ea8c
+=======
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511

@@ -6,3 +6,5 @@ from .models import Testimonial, School, Review
 admin.site.register(Testimonial)
 admin.site.register(School)
 admin.site.register(Review)
+
+# Register your models here.

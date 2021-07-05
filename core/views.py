@@ -26,3 +26,6 @@ class ReviewAPIListView(ListCreateAPIView):
         school_id = self.kwargs.get('pk')
         school = School.objects.get(pk=school_id)
         serializer.save(author=author, school=school)
+from django.shortcuts import render
+
+# Create your views here.

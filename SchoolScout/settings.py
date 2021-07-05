@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 import os, environ
+=======
+import os
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511
 from pathlib import Path
 import dj_database_url
 import django_heroku
 
+<<<<<<< HEAD
 env = environ.Env()
 environ.Env.read_env()
 
+=======
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -14,7 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = env('SCHOOL_SCOUT_SECRET_KEY')
+=======
+SECRET_KEY = os.environ.get('SCHOOL_SCOUT_SECRET_KEY')
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,7 +54,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'core'
+<<<<<<< HEAD
 
+=======
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {
@@ -83,7 +97,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'SchoolScout.wsgi.application'
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> d0c3173d7b3480b9edb78853c78b132ecc443511
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
