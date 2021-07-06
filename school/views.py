@@ -1,11 +1,11 @@
 from rest_framework import generics
 
-from core.models import School
+from .models import School
 from .serializers import SchoolSerializer
 
 
-
 # Create your views here.
+
 
 #Making request for schools
 
@@ -33,3 +33,4 @@ class ViewSchoolViews(generics.RetrieveAPIView):
     #This endpoint view the details of a specific institution
     queryset = School.objects.all()
     serializer_class = SchoolSerializer
+
