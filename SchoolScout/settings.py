@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'core',
     'school',
+    'courses',
 ]
 
 REST_AUTH_REGISTER_SERIALIZERS = {

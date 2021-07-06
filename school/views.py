@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from core.models import School
+from .models import School
 from .serializers import SchoolSerializer
 
 
