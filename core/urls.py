@@ -1,13 +1,25 @@
+
 from django.conf import settings
-
-from django.urls import path
 from django.contrib import admin
+from django.urls import path, include
 
-#from .views import ArticleListAPIView, ArticleDetailAPIView
 
+GET_OPTIONS = {'get': 'list'}
 
-urlpatterns = [
-#    path('', ArticleListAPIView.as_view(), name='article_list'),
-#    path('<pk>', ArticleDetailAPIView.as_view(), name='article_detail'),
+RETRIEVE_OPTIONS = {'get': 'retrieve'}
 
-]
+POST_OPTIONS = {'post': 'create'}
+
+LIST_OPTIONS = {
+    'get': 'list',
+    'post': 'create'
+}
+
+DETAIL_OPTIONS = {
+    'get': 'retrieve',
+    'put': 'update',
+    'patch': 'partial_update',
+    'delete': 'destroy'
+}
+
+urlpatterns = []
