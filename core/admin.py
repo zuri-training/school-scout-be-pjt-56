@@ -14,7 +14,7 @@ from django.contrib import admin
 # from core.department.models import DepartmentName
 # from core.courses.models import Course
 # from core.comments.models import Comment
-# from core.articles.models import Article
+from core.articles.models import Article
 # from core.scholarships.models import Scholarship
 # #from core.location.models import Location
 # from core.requirement.models import EntryRequirement
@@ -34,7 +34,7 @@ from django.contrib import admin
 
 
 # #pauline-banye
-# admin.site.register(Article)
+admin.site.register(Article)
 # admin.site.register(Comment)
 # admin.site.register(DepartmentName)
 # admin.site.register(FacultyName)
