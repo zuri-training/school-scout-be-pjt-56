@@ -12,7 +12,7 @@ class Article(models.Model): # Create new post model
     slug = AutoSlugField(populate_from='title', blank=True, editable=True)
     image = models.ImageField(null=True, blank=True, upload_to='images/')
     body = models.TextField()
-    snippet = models.CharField(max_length=350)
+    snippet = models.CharField(max_length=250)
     date = models.DateField()
 
     class Meta:

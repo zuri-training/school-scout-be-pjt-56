@@ -14,6 +14,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             'slug',
             'image',
             'body',
+            'snippet',
             'date',
         ]
         extra_kwargs = {
