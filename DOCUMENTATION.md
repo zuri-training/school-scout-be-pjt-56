@@ -314,7 +314,64 @@ This endpoint is responsible for retrieving the detail page of a faculty and all
 > * slug \<optional>
 > * school 
 #
+## Department Endpoints
+.
 
+**x. END POINT:** /department : http://127.0.0.1:8000/department
+
+This endpoint is responsible for retrieving the list of departments and allowing admins to create new departments.
+
+> **Media Type:** *"application/json"*
+>
+> **Allowed Methods:** "GET, POST"
+>
+> **Required Headers:** *None*
+>
+> **Content (Request):**
+>
+> * name
+> * slug \<optional>
+> * school 
+> 
+> 
+> **Return Type:** *"application/json"*
+>
+> **Content (Response):**
+>
+> * pk
+> * name
+> * slug \<optional>
+> * school 
+
+...
+
+**IX. END POINT:** /department/\<`slug`> : http://127.0.0.1:8000/department/`slug`
+* Note: A `slug` is generated automatically if no input is specified
+
+This endpoint is responsible for retrieving the detail page of a department and allowing admins to edit, update or delete the department.
+>
+> **Media Type:** *"application/json"*
+>
+> **Allowed Methods:** " GET, PUT, PATCH, DELETE"
+>
+> **Required Headers:** *None*
+>
+> **Content (Request):**
+>
+> 
+> * name
+> * slug \<optional>
+> * school 
+> 
+> 
+> **Return Type:** *"application/json"*
+>
+> **Content (Response):**
+>
+> * pk
+> * name
+> * slug \<optional>
+> * school 
 
 
 

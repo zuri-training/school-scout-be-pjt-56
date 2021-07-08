@@ -11,7 +11,7 @@ from django.contrib import admin
 from core.schools.models import School
 # from core.reviews.models import Review
 from core.faculty.models import Faculty
-# from core.department.models import DepartmentName
+from core.department.models import Department
 # from core.courses.models import Course
 from core.comments.models import Comment
 from core.articles.models import Article
@@ -36,7 +36,7 @@ from core.articles.models import Article
 # #pauline-banye
 admin.site.register(Article)
 admin.site.register(Comment)
-# admin.site.register(DepartmentName)
+admin.site.register(Department)
 admin.site.register(Faculty)
 # admin.site.register(Scholarship)
 # admin.site.register(SchoolNews)
