@@ -7,7 +7,7 @@ from django.contrib import admin
 # from core.advisor.models import CareerQuestion, CareerQuestionAnswer, CareerQuestionOption
 # from core.student.models import StudentAccount, StudentAccountAdmin
 # from core.testimonials.models import Testimonial
-# from core.news.models import SchoolNews
+from core.news.models import News
 from core.schools.models import School
 # from core.reviews.models import Review
 from core.faculty.models import Faculty
@@ -39,7 +39,7 @@ admin.site.register(Comment)
 admin.site.register(Department)
 admin.site.register(Faculty)
 admin.site.register(Scholarship)
-# admin.site.register(SchoolNews)
+admin.site.register(News)
 # #admin.site.register(EntryRequirement)
 
 
