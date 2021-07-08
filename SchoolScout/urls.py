@@ -42,7 +42,7 @@ urlpatterns = [
     # path('savedcourse/', include('core.savedcourse.urls')),
     # path('savedscholarship/', include('core.savedscholarship.urls')),
     # path('savedschool/', include('core.savedschool.urls')),
-    # path('scholarships/', include('core.scholarships.urls')),  
+    path('scholarships/', include('core.scholarships.urls')),  
     path('schools/', include('core.schools.urls')),
     # path('student/', include('core.student.urls')),
     # path('testimonials/', include('core.testimonials.urls')),

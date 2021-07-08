@@ -15,7 +15,7 @@ from core.department.models import Department
 # from core.courses.models import Course
 from core.comments.models import Comment
 from core.articles.models import Article
-# from core.scholarships.models import Scholarship
+from core.scholarships.models import Scholarship
 # #from core.location.models import Location
 # from core.requirement.models import EntryRequirement
 # from core.fees.models import Tuition
@@ -38,7 +38,7 @@ admin.site.register(Article)
 admin.site.register(Comment)
 admin.site.register(Department)
 admin.site.register(Faculty)
-# admin.site.register(Scholarship)
+admin.site.register(Scholarship)
 # admin.site.register(SchoolNews)
 # #admin.site.register(EntryRequirement)
 
