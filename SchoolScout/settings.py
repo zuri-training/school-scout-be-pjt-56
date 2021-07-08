@@ -147,15 +147,15 @@ if DEBUG:
 
 
 # Used in production
-# if DEBUG is False:
-#     # gmail_email_backend_setup
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#     EMAIL_HOST = 'smtp.gmail.com'
-#     EMAIL_HOST_USER = 'schoolscout@gmail.com'
-#     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_BACKEND_KEY')
-#     EMAIL_PORT = 587
-#     EMAIL_USE_TLS = True
-#     DEFAULT_FROM_EMAIL = 'schoolscout@gmail.com'
+if not DEBUG:
+    # gmail_email_backend_setup
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'schoolscout56@gmail.com'
+    EMAIL_HOST_PASSWORD = os.environ.get('SCHOOL_SCOUT_EMAIL_KEY')
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'schoolscout56@gmail.com'
 
 
 # Internationalization
