@@ -8,9 +8,9 @@ from django.contrib import admin
 # from core.student.models import StudentAccount, StudentAccountAdmin
 # from core.testimonials.models import Testimonial
 # from core.news.models import SchoolNews
-# from core.schools.models import School
+from core.schools.models import School
 # from core.reviews.models import Review
-# from core.faculty.models import FacultyName
+from core.faculty.models import Faculty
 # from core.department.models import DepartmentName
 # from core.courses.models import Course
 from core.comments.models import Comment
@@ -37,7 +37,7 @@ from core.articles.models import Article
 admin.site.register(Article)
 admin.site.register(Comment)
 # admin.site.register(DepartmentName)
-# admin.site.register(FacultyName)
+admin.site.register(Faculty)
 # admin.site.register(Scholarship)
 # admin.site.register(SchoolNews)
 # #admin.site.register(EntryRequirement)
@@ -46,7 +46,7 @@ admin.site.register(Comment)
 
 #hezekiah
 #admin.site.register(Course)
-#admin.site.register(School)
+admin.site.register(School)
 
 
 #Iconnell
