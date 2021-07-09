@@ -8,7 +8,7 @@ from django.contrib import admin
 # from core.student.models import StudentAccount, StudentAccountAdmin
 # from core.testimonials.models import Testimonial
 from core.news.models import News
-from core.schools.models import School
+# from core.schools.models import School
 # from core.reviews.models import Review
 from core.faculty.models import Faculty
 from core.department.models import Department
@@ -17,7 +17,7 @@ from core.comments.models import Comment
 from core.articles.models import Article
 from core.scholarships.models import Scholarship
 # #from core.location.models import Location
-# from core.requirement.models import EntryRequirement
+from core.requirement.models import Requirements
 # from core.fees.models import Tuition
 
    
@@ -40,13 +40,13 @@ admin.site.register(Department)
 admin.site.register(Faculty)
 admin.site.register(Scholarship)
 admin.site.register(News)
-# #admin.site.register(EntryRequirement)
+admin.site.register(Requirements)
 
 
 
 #hezekiah
 #admin.site.register(Course)
-admin.site.register(School)
+# admin.site.register(School)
 
 
 #Iconnell
