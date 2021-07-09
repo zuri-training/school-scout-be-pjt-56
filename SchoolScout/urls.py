@@ -27,6 +27,8 @@ urlpatterns = [
     path('core/', include('core.urls')),
 
     path('auth/', include('user_auth.urls')),
+    path('testimonials/', include('core.testimonials.urls')),
+    path('reviews/', include('core.reviews.urls')),
     
     # path('articles/', include('core.articles.urls')),
     # path('advisor/', include('core.advisor.urls')), 
@@ -38,14 +40,12 @@ urlpatterns = [
     # path('location/', include('core.location.urls')),
     # path('news/', include('core.news.urls')),
     # path('requirement/', include('core.requirement.urls')),
-    # path('reviews/', include('core.reviews.urls')),
     # path('savedcourse/', include('core.savedcourse.urls')),
     # path('savedscholarship/', include('core.savedscholarship.urls')),
     # path('savedschool/', include('core.savedschool.urls')),
     # path('scholarships/', include('core.scholarships.urls')),  
     # path('schools/', include('core.schools.urls')),
     # path('student/', include('core.student.urls')),
-    # path('testimonials/', include('core.testimonials.urls')),
         
     path('schema/', SpectacularAPIView.as_view(), name='schema'),
     path('docs/', SpectacularSwaggerView.as_view(template_name='swagger-ui.html', url_name='schema'), name='swagger-ui')
