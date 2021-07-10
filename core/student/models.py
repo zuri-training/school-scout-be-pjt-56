@@ -2,9 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.deletion import CASCADE
 from django.utils.translation import ugettext as _
-# from django.contrib.auth.models import (
-#     BaseUserManager, AbstractBaseUser
-# ) # new
+
 
 GENDER = (
     ('MALE', 'MALE'),
@@ -263,17 +261,16 @@ COUNTRIES = (
 
 class StudentAccount(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='student_accounts')
+    image = models.ImageField(upload_to='images')
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     telephone = models.CharField(max_length=255)
     mobile = models.CharField(max_length=255)
     gender = models.CharField(max_length=50, choices=GENDER)
     email = models.EmailField(max_length=254)
     educational_level = models.CharField(max_length=50, choices = EDUCATIONAL_LEVEL)
     country = models.CharField(max_length=250, choices = COUNTRIES)
-    # email = models.EmailField(
-    #     verbose_name='email address',
-    #     max_length=255,
-    #     unique=True,
-    # )
+    state =  models.CharField(max_length=225)
 
     @property
     def full_name(self):
