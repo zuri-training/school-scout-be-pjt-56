@@ -6,19 +6,19 @@ from django.contrib import admin
 # from core.savedschool.models import SavedSchool
 # from core.advisor.models import CareerQuestion, CareerQuestionAnswer, CareerQuestionOption
 # from core.student.models import StudentAccount, StudentAccountAdmin
-# from core.testimonials.models import Testimonial
+from core.testimonials.models import Testimonial
 from core.news.models import News
-# from core.schools.models import School
-# from core.reviews.models import Review
+from core.schools.models import School
+from core.reviews.models import Review
 from core.faculty.models import Faculty
 from core.department.models import Department
-# from core.courses.models import Course
+from core.courses.models import Course
 from core.comments.models import Comment
 from core.articles.models import Article
 from core.scholarships.models import Scholarship
 # #from core.location.models import Location
 from core.requirement.models import Requirements
-# from core.fees.models import Tuition
+from core.fees.models import Tuition
 
    
 
@@ -45,18 +45,18 @@ admin.site.register(Requirements)
 
 
 #hezekiah
-#admin.site.register(Course)
-# admin.site.register(School)
+admin.site.register(Course)
+admin.site.register(School)
 
 
 #Iconnell
-#admin.site.register(Review)
-#admin.site.register(Testimonial)
+admin.site.register(Review)
+admin.site.register(Testimonial)
 
 
 #Blaise
 #admin.site.register(Location)
-#admin.site.register(Tuition)
+admin.site.register(Tuition)
 
 
 
