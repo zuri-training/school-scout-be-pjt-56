@@ -3,10 +3,13 @@ from rest_framework import serializers
 from .models import School
 
 from core.courses.serializers import CourseSerializer
+from core.programs.serializers import ProgramSerializer
+
 
 
 class SchoolSerializer(serializers.ModelSerializer):
     courses = CourseSerializer(many=True, read_only=True)
+    programs = ProgramSerializer(many=True, read_only=True)
 
     class Meta:
         model = School
@@ -16,7 +19,7 @@ class SchoolSerializer(serializers.ModelSerializer):
             'slug',
             'overview',
             'image',
-            'program',
+            'programs',
             #'entry_requirements',
             #'faculty_name',
             'world_ranking',

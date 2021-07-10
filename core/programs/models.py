@@ -1,5 +1,5 @@
-
 from core.schools.models import School
+
 from django.db import models
 from autoslug import AutoSlugField
 
@@ -25,7 +25,6 @@ class Program(models.Model):
     name = models.CharField(max_length=150, choices=OPTIONS, help_text='Enter Name of Program', blank=False, unique=True)
     slug = AutoSlugField(populate_from='name', blank=True, editable=True)
     school = models.ForeignKey(School, on_delete=models.CASCADE, null=True, blank=True, related_name="programs")
-    
     
     class Meta:
         ordering = ['name']
