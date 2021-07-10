@@ -1,11 +1,11 @@
 
 from django.contrib import admin
 
-from core.savedcourse.models import SavedCourse
-from core.savedscholarship.models import SavedScholarship
-from core.savedschool.models import SavedSchool
-from core.advisor.models import CareerQuestion, CareerQuestionAnswer, CareerQuestionOption
-# from core.student.models import StudentAccount, StudentAccountAdmin
+# from core.savedcourse.models import SavedCourse
+# from core.savedscholarship.models import SavedScholarship
+# from core.savedschool.models import SavedSchool
+# from core.advisor.models import CareerQuestion, CareerQuestionAnswer, CareerQuestionOption
+from core.student.models import StudentAccount #StudentAccountAdmin
 # from core.testimonials.models import Testimonial
 # from core.news.models import SchoolNews
 # from core.schools.models import School
@@ -24,13 +24,14 @@ from core.advisor.models import CareerQuestion, CareerQuestionAnswer, CareerQues
 
 
 # #poshpeck
-# admin.site.register(StudentAccount,StudentAccountAdmin)
-admin.site.register(CareerQuestion)
-admin.site.register(CareerQuestionAnswer)
-admin.site.register(SavedSchool)
-admin.site.register(SavedScholarship)
-admin.site.register(SavedCourse)
-admin.site.register(CareerQuestionOption)
+admin.site.register(StudentAccount)
+# admin.site.register(StudentAccountAdmin)
+# admin.site.register(CareerQuestion)
+# admin.site.register(CareerQuestionAnswer)
+# admin.site.register(SavedSchool)
+# admin.site.register(SavedScholarship)
+# admin.site.register(SavedCourse)
+# admin.site.register(CareerQuestionOption)
 
 
 # #pauline-banye
