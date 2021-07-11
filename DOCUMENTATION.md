@@ -126,3 +126,5 @@ This endpoint is responsible for resetting a user's password. It receives a user
 > **Content (Response):**
 >
 > * success/error message
+
+
