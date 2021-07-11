@@ -15,7 +15,7 @@ class CourseSerializer(serializers.ModelSerializer):
             'image',
             'course_requirements',
             'program',
-            #'name_of_department',
+            'name_of_department',
             'school_location',
             'tuition', 
             'tution_price',
