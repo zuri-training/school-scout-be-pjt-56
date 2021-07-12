@@ -189,7 +189,6 @@ if not DEBUG:
     DEFAULT_FROM_EMAIL = 'schoolscout56@gmail.com'
 
 
-
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 
 ACCOUNT_EMAIL_REQUIRED = True   
@@ -201,15 +200,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True   
 
 ACCOUNT_USERNAME_REQUIRED = False
-
-
-
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-
-ACCOUNT_EMAIL_REQUIRED = True   
-
-ACCOUNT_USERNAME_REQUIRED = False
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
