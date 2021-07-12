@@ -1,7 +1,10 @@
-import os
+import os, environ
 from pathlib import Path
 import dj_database_url
 import django_heroku
+
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,17 +14,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SCHOOL_SCOUT_SECRET_KEY')
+SECRET_KEY = env('SCHOOL_SCOUT_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic', #to use WhiteNoise in development for staticfiles (solved the 500 server error)
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +43,10 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
+    
+    'phonenumber_field',
+    'phonenumbers',
+    'drf_spectacular',
 
     'core',
     'user_auth'
@@ -48,16 +56,18 @@ REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'user_auth.serializers.UserRegistrationSerializer',
 }
 
-
 MIDDLEWARE = [
+
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  
 ]
 
 ROOT_URLCONF = 'SchoolScout.urls'
@@ -113,8 +123,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -123,7 +131,8 @@ REST_FRAMEWORK = {
     ],
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
+        
     ],
 
     'DEFAULT_PARSER_CLASSES': (
@@ -132,10 +141,11 @@ REST_FRAMEWORK = {
         'rest_framework.parsers.MultiPartParser',
     ),
 
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 100
 }
-
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
@@ -168,15 +178,30 @@ if DEBUG:
 
 
 # Used in production
-# if DEBUG is False:
-#     # gmail_email_backend_setup
-#     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#     EMAIL_HOST = 'smtp.gmail.com'
-#     EMAIL_HOST_USER = 'schoolscout@gmail.com'
-#     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_BACKEND_KEY')
-#     EMAIL_PORT = 587
-#     EMAIL_USE_TLS = True
-#     DEFAULT_FROM_EMAIL = 'schoolscout@gmail.com'
+if not DEBUG:
+    # gmail_email_backend_setup
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'schoolscout56@gmail.com'
+    EMAIL_HOST_PASSWORD = os.environ.get('SCHOOL_SCOUT_EMAIL_KEY')
+    EMAIL_PORT = 587
+    EMAIL_USE_TLS = True
+    DEFAULT_FROM_EMAIL = 'schoolscout56@gmail.com'
+
+
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_EMAIL_REQUIRED = True   
+
+ACCOUNT_USERNAME_REQUIRED = False
+
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+
+ACCOUNT_EMAIL_REQUIRED = True   
+
+ACCOUNT_USERNAME_REQUIRED = False
+
 
 
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
@@ -207,6 +232,8 @@ USE_THOUSAND_SEPARATOR = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
