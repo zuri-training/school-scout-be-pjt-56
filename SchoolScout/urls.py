@@ -28,12 +28,12 @@ urlpatterns = [
 
     path('auth/', include('user_auth.urls')),
     
-    # path('articles/', include('core.articles.urls')),
+    path('articles/', include('core.articles.urls')),
     # path('advisor/', include('core.advisor.urls')), 
-    # path('comments/', include('core.comments.urls')),
+    path('comments/', include('core.comments.urls')),
     # path('courses/', include('core.courses.urls')),
-    # path('department/', include('core.department.urls')),
-    # path('faculty/', include('core.faculty.urls')),
+    path('department/', include('core.department.urls')),
+    path('faculty/', include('core.faculty.urls')),
     # path('fees/', include('core.fees.urls')),
     # path('location/', include('core.location.urls')),
     # path('news/', include('core.news.urls')),
@@ -42,8 +42,8 @@ urlpatterns = [
     # path('savedcourse/', include('core.savedcourse.urls')),
     # path('savedscholarship/', include('core.savedscholarship.urls')),
     # path('savedschool/', include('core.savedschool.urls')),
-    # path('scholarships/', include('core.scholarships.urls')),  
-    # path('schools/', include('core.schools.urls')),
+    path('scholarships/', include('core.scholarships.urls')),  
+    path('schools/', include('core.schools.urls')),
     # path('student/', include('core.student.urls')),
     # path('testimonials/', include('core.testimonials.urls')),
         
