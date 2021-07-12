@@ -31,7 +31,7 @@ urlpatterns = [
     
     path('articles/', include('core.articles.urls')),
     # path('advisor/', include('core.advisor.urls')), 
-    # path('comments/', include('core.comments.urls')),
+    path('comments/', include('core.comments.urls')),
     # path('courses/', include('core.courses.urls')),
     # path('department/', include('core.department.urls')),
     # path('faculty/', include('core.faculty.urls')),
