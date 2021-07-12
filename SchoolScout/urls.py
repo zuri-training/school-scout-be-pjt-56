@@ -27,9 +27,9 @@ urlpatterns = [
     path('core/', include('core.urls')),
 
     path('auth/', include('user_auth.urls')),
-    path('testimonials/', include('core.testimonials.urls')),
-    #path('reviews/', include('core.reviews.urls')),
+    path('reviews/', include('core.reviews.urls')),
     
+    #path('testimonials/', include('core.testimonials.urls')),
     # path('articles/', include('core.articles.urls')),
     # path('advisor/', include('core.advisor.urls')), 
     # path('comments/', include('core.comments.urls')),
