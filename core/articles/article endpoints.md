@@ -1,10 +1,10 @@
-# Welcome to SchoolScout Requirement APIs Documentation
+# Welcome to SchoolScout Articles APIs Documentation
 
 
 ## LIST ENDPOINT:
-- URL: http://127.0.0.1:8000/requirement
+- URL: http://127.0.0.1:8000/articles
 
-This endpoint is responsible for retrieving the list of schoolrequirement and allowing admins to create new school requirements.
+This endpoint is responsible for retrieving the list of articles and allowing admins to create new articles
 
 > **Media Type:** *"application/json"*
 >
@@ -14,32 +14,32 @@ This endpoint is responsible for retrieving the list of schoolrequirement and al
 >
 > **Content (Request):**
 >
+> * author
 > * title
 > * slug \<editable \ auto-generated>
-> * school
-> * program
-> * description
-
+> * image
+> * body
+> * date
 > 
 > **Return Type:** *"application/json"*
 >
 > **Content (Response):**
 >
 > * pk
+> * author
 > * title
-> * slug 
-> * school
-> * program
-> * description     
-
+> * slug
+> * image
+> * body
+> * date
 
 #
 
 ## DETAIL ENDPOINT:
-- URL: http://127.0.0.1:8000/requirement/\<`slug`>
+- URL: http://127.0.0.1:8000/articles/\<`slug`>
 * Note: A `slug` is generated automatically if no input is specified
 
-This endpoint is responsible for retrieving the detail page of school requirement and allowing admins to edit, update or delete the school requirement.
+This endpoint is responsible for retrieving the detail page of articles and allowing admins to edit, update or delete the articles.
 >
 > **Media Type:** *"application/json"*
 >
@@ -55,9 +55,11 @@ This endpoint is responsible for retrieving the detail page of school requiremen
 > **Return Type:** *"application/json"*
 >
 > **Content (Response):**
+>
 > * pk
+> * author
 > * title
-> * slug 
-> * school
-> * program
-> * description     
+> * slug
+> * image
+> * body
+> * date
