@@ -16,12 +16,10 @@ This endpoint is responsible for retrieving the list of schoolrequirement and al
 >
 > * title
 > * slug \<editable \ auto-generated>
-> * category
 > * school
-> * image
-> * info
-> * snippet
-> * date   
+> * program
+> * description
+
 > 
 > **Return Type:** *"application/json"*
 >
@@ -29,13 +27,11 @@ This endpoint is responsible for retrieving the list of schoolrequirement and al
 >
 > * pk
 > * title
-> * slug
-> * category
+> * slug 
 > * school
-> * image
-> * info
-> * snippet
-> * date            
+> * program
+> * description     
+
 
 #
 
@@ -61,10 +57,7 @@ This endpoint is responsible for retrieving the detail page of school requiremen
 > **Content (Response):**
 > * pk
 > * title
-> * slug
-> * category
+> * slug 
 > * school
-> * image
-> * info
-> * snippet
-> * date
+> * program
+> * description     
