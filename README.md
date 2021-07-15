@@ -238,17 +238,6 @@ An API or Application Programming Interface Endpoint is the specific location wh
 
 The endpoints for the SchoolScout API include:
 
-
-| <b><u>Name</u></b> | <b><u>List Endpoints </u></b> | <b><u>Detail Endpoints </u></b> |
-| :---         | :---         | :---         |
-| `Articles`  | *articles/* | *articles/\<slug>*/
-| `Scholarship` | *scholarships/* | *scholarships/\<slug>*/
-| `School` |*schools/* | *schools/\<slug>*/
-| `Comments`  | *comments/* | *comments/\<pk>*/
-| `Courses` | *courses/* | *courses/\<pk>*/
-| `Tuition` | *fees/* | -
-
-
 -  `Registration` */auth/registration/* - User registration
 ```bash
 
@@ -290,11 +279,16 @@ Return Type: "application/json"
 Content (Response): "key\<string>"
 ```
 
-**Note**
-- CRUD - Create / Retrieve / Update /Destroy
-- `pk` - Also known as primary key. Unique identifier for records in the database. 
-- `slug` - A short label. Usualy used as a valid url for websites.  
-- A complete list of the APIs for the SchoolScout project can be found in the `endpoint_documentation.md` file.
+| <b><u>Endpoints</u></b> | <b><u>Requests </u></b> |
+| :---         | :---         |
+| *`Articles` /core/articles/* | CRUD functionality on the articles pages |
+| *`Scholarship` /core/scholarships/* | CRUD functionality on the scholarships pages |
+| *`School` /core/school/* | CRUD functionality on the school pages |
+| *`Comments` /core/comments/* | CRUD functionality on the comments pages |
+| *`Courses`/core/courses/* | CRUD functionality on the Courses pages |
+
+
+- Note: **CRUD - Create / Retrieve / Update /Destroy**
 #
 
 > ## Status

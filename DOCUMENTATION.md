@@ -3,7 +3,7 @@
 ## User Registration and Authentication Endpoints
 ...
 
-**i. END POINT:** /auth/registration/
+**I. END POINT:** /auth/registration/
 
 This endpoint is responsible for registering new users.
 >
@@ -34,7 +34,7 @@ This endpoint is responsible for registering new users.
 
 ...
 
-**ii. END POINT:** /auth/login/
+**II. END POINT:** /auth/login/
 
 This endpoint is responsible for authenticating a user.
 >
@@ -57,7 +57,7 @@ This endpoint is responsible for authenticating a user.
 
 ...
 
-**iii. END POINT:** /auth/user/
+**III. END POINT:** /auth/user/
 
 This endpoint is responsible for retrieving and updating user details.
 >
@@ -84,7 +84,7 @@ This endpoint is responsible for retrieving and updating user details.
 
 ...
 
-**iv. END POINT:** /auth/password/change/
+**IV. END POINT:** /auth/password/change/
 
 This endpoint is responsible for updating/changing a user's password.
 >
@@ -107,7 +107,7 @@ This endpoint is responsible for updating/changing a user's password.
 
 ...
 
-**v. END POINT:** /auth/accounts/password/reset/
+**V. END POINT:** /auth/accounts/password/reset/
 
 This endpoint is responsible for resetting a user's password. It receives a user's email and sends a password reset link to the email
 >
