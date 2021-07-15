@@ -32,7 +32,6 @@ This endpoint is responsible for retrieving the list of schoolrequirement and al
 > * program
 > * description     
 
-
 #
 
 ## DETAIL ENDPOINT:
