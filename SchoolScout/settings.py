@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'phonenumber_field',
     'phonenumbers',
     'drf_spectacular',
+
     'core',
     'user_auth'
 ]
@@ -199,7 +200,6 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED = True   
 
 ACCOUNT_USERNAME_REQUIRED = False
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

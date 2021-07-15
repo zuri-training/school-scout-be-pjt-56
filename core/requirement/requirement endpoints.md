@@ -19,6 +19,7 @@ This endpoint is responsible for retrieving the list of schoolrequirement and al
 > * school
 > * program
 > * description
+
 > 
 > **Return Type:** *"application/json"*
 >
@@ -53,7 +54,6 @@ This endpoint is responsible for retrieving the detail page of school requiremen
 > **Return Type:** *"application/json"*
 >
 > **Content (Response):**
-> * pk
 > * pk
 > * title
 > * slug 
