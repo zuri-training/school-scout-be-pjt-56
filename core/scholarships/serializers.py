@@ -22,6 +22,7 @@ class ScholarshipSerializer(serializers.ModelSerializer):
             'facebook',
             'twitter',
             'date',
+            'saved',
         ]
         extra_kwargs = {
             'image': {'required': False}

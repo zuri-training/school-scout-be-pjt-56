@@ -2,8 +2,8 @@ from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
 from core.scholarships import views
 
-app_name = 'scholarships'
 
+app_name = 'scholarships'
 
 urlpatterns = [
     path('', views.ScholarshipList.as_view(), name='list'),

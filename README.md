@@ -11,6 +11,7 @@
 * [Setting up the project](#setup)
 * [Setting up the PostgreSql Database](#setting-up-the-postgresql-database)
 * [Backend Deliverables](#backend-deliverables)
+* [Testing](#testing)
 * [Status](#status)
 * [Contributing to the project](#contributing-to-the-project)
 * [PJT-56 Contributors](#pjt-56-contributors)
@@ -245,8 +246,8 @@ The endpoints for the SchoolScout API include:
 | `Scholarship` | *scholarships/* | *scholarships/\<slug>*/
 | `School` |*schools/* | *schools/\<slug>*/
 | `Comments`  | *comments/* | *comments/\<pk>*/
-| `Courses` | *courses/* | *courses/\<pk>*/
-| `Tuition` | *fees/* | -
+| `Courses` | *courses/* | *courses/\<slug>*/
+| `Tuition` | *fees/* | *fees/\<slug>*
 
 
 -  `Registration` */auth/registration/* - User registration
@@ -293,8 +294,25 @@ Content (Response): "key\<string>"
 **Note**
 - CRUD - Create / Retrieve / Update /Destroy
 - `pk` - Also known as primary key. Unique identifier for records in the database. 
-- `slug` - A short label. Usualy used as a valid url for websites.  
-- A complete list of the APIs for the SchoolScout project can be found in the `endpoint_documentation.md` file.
+- `slug` - A short unique label. Usualy used as a valid url for websites.  
+- Descriptive lists of some of the individual APIs for the SchoolScout project can be found in a few folders, such as the *articles folder*.
+- A complete list of all the APIs for the SchoolScout project can be found in the `endpoints_list.md` file.
+#
+
+> ## Testing
+Testing codes is important to detect errors and inconsistencies in the code. This is done to ensure the quality of the project before deployment.
+
+There are multiple ways to test your codes and one important tool called `Coverage` is often utilized to analyze the extent to which your code has been tested. 
+
+To test this project, coverage was installed and run using the following command.  
+
+```bash
+$ coverage run --omit='*/venv/*' manage.py test 
+```
+- Note: `--omit='*/venv/*'` is required to exclude all the files relating to the virtual environment.
+
+Coverage generates a report in a folder called **htmlcov**, which provides an index of the files that are tested and a percentage coverage. Any files with less than a *100%* coverage, potentially requires further testing. 
+
 #
 
 > ## Status
