@@ -29,7 +29,7 @@ The platform would have a list of schools where users can view information about
 </p> 
 
 <p align="justify">
-The site would also provide an option where you can chat with a representative on the site for help.
+The site would also provide an option where you can chat with a representative on the site for help. The backend for this project is hosted on Heroku - https://schoolscoutapp.herokuapp.com.
 </p>
 
 #
